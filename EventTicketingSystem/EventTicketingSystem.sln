@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -24,6 +24,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Api", "EventTicketingSystem.Api\EventTicketingSystem.Api.csproj", "{55C6B6BB-EDFC-431A-9CC2-FB278CF50326}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.App", "EventTicketingSystem.App\EventTicketingSystem.App.csproj", "{8C8F95C4-1260-4F93-9406-AB52F2EF479E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E7CCEFBB-ACEC-41F4-BEED-57F467B20302}"
+	ProjectSection(SolutionItems) = preProject
+		..\EventTicketingSystem.sql = ..\EventTicketingSystem.sql
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
