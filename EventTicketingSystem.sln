@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Database", "..\EventTicketingSystem.Database\EventTicketingSystem.Database.csproj", "{FD443811-E941-4244-92DF-63495381C869}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Database", "EventTicketingSystem.Database\EventTicketingSystem.Database.csproj", "{2E5E03A1-FE0B-0627-20D1-A308BF05267E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Domain", "..\EventTicketingSystem.Domain\EventTicketingSystem.Domain.csproj", "{1B2C02EB-5D8B-4D12-B035-508932AE29C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Shared", "EventTicketingSystem.Shared\EventTicketingSystem.Shared.csproj", "{A1462107-D4A3-EA38-2ED9-D16877BCA4CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Shared", "..\EventTicketingSystem.Shared\EventTicketingSystem.Shared.csproj", "{FF774E82-037F-4244-B67E-8F72FF5FFF15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Domain", "EventTicketingSystem.Domain\EventTicketingSystem.Domain.csproj", "{06607EA3-3EC1-942E-3985-52F3ABF21138}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,18 @@ Global
 		{8C8F95C4-1260-4F93-9406-AB52F2EF479E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C8F95C4-1260-4F93-9406-AB52F2EF479E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C8F95C4-1260-4F93-9406-AB52F2EF479E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD443811-E941-4244-92DF-63495381C869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD443811-E941-4244-92DF-63495381C869}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD443811-E941-4244-92DF-63495381C869}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD443811-E941-4244-92DF-63495381C869}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B2C02EB-5D8B-4D12-B035-508932AE29C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B2C02EB-5D8B-4D12-B035-508932AE29C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B2C02EB-5D8B-4D12-B035-508932AE29C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B2C02EB-5D8B-4D12-B035-508932AE29C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF774E82-037F-4244-B67E-8F72FF5FFF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF774E82-037F-4244-B67E-8F72FF5FFF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF774E82-037F-4244-B67E-8F72FF5FFF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF774E82-037F-4244-B67E-8F72FF5FFF15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E5E03A1-FE0B-0627-20D1-A308BF05267E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5E03A1-FE0B-0627-20D1-A308BF05267E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5E03A1-FE0B-0627-20D1-A308BF05267E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5E03A1-FE0B-0627-20D1-A308BF05267E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1462107-D4A3-EA38-2ED9-D16877BCA4CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1462107-D4A3-EA38-2ED9-D16877BCA4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1462107-D4A3-EA38-2ED9-D16877BCA4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1462107-D4A3-EA38-2ED9-D16877BCA4CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06607EA3-3EC1-942E-3985-52F3ABF21138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06607EA3-3EC1-942E-3985-52F3ABF21138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06607EA3-3EC1-942E-3985-52F3ABF21138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06607EA3-3EC1-942E-3985-52F3ABF21138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
