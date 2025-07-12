@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace EventTicketingSystem.Database.AppDbContext;
 
 public partial class TblBusinessemail
 {
+    [Key]
     public string? Businessemailid { get; set; }
 
     public string? Businessemailcode { get; set; }
