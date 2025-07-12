@@ -8,7 +8,7 @@ public class DA_TicketType
 
     private readonly AppDbContext _db;
 
-    public DA_TicketType(ILogger<DA_TicketType> logger, AppDbContext db = null)
+    public DA_TicketType(ILogger<DA_TicketType> logger, AppDbContext db)
     {
         _logger = logger;
         _db = db;

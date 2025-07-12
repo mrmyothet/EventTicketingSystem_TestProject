@@ -2,9 +2,13 @@
 
 public class TicketTypeModel
 {
-    public string Tickettypeid { get; set; }
+    public string TicketTypeId { get; set; }
 
-    public string Tickettypecode { get; set; }
+    public string TicketTypeCode { get; set; }
 
-    public string Tickettypename { get; set; }
+    public string TicketTypeName { get; set; }
+
+    public string CreatedBy { get; set; }
+
+
 }
