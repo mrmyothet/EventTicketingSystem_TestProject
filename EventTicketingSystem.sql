@@ -48,7 +48,8 @@ CREATE TABLE Tbl_BusinessEmail (
     CreatedAt TIMESTAMP,
     ModifiedBy VARCHAR,
     ModifiedAt TIMESTAMP,
-    DeleteFlag BOOLEAN
+    DeleteFlag BOOLEAN,
+    CONSTRAINT tbl_BusinessEmail_PKey PRIMARY KEY (BusinessEmailId)
 );
 
 CREATE TABLE Tbl_Ticket (
