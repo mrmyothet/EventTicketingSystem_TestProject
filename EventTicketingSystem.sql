@@ -1,12 +1,11 @@
 -- Create the database
-CREATE DATABASE EventTicketingSystem;
+-- CREATE DATABASE EventTicketingSystem;
 
 CREATE TABLE Tbl_Admin (
     UserId VARCHAR,
     UserCode VARCHAR,
     Username VARCHAR,
     Email VARCHAR,
-    PhoneNo VARCHAR,
     Password VARCHAR,
     CreatedBy VARCHAR,
     CreatedAt TIMESTAMP,
@@ -89,41 +88,6 @@ CREATE TABLE Tbl_TicketType (
     DeleteFlag BOOLEAN
 );
 
-CREATE TABLE Tbl_Event (
-    EventId VARCHAR,
-    EventCode VARCHAR,
-    EventName VARCHAR,
-    CategoryCode VARCHAR,
-    Description VARCHAR,
-    Address VARCHAR,
-    StartDate TIMESTAMP,
-    EndDate TIMESTAMP,
-    EventImage VARCHAR,
-    IsActive BOOLEAN,
-    EventStatus VARCHAR,
-    BusinessOwnerCode VARCHAR,
-    TotalTicketQuantity INT,
-    CreatedBy VARCHAR,
-    CreatedAt TIMESTAMP,
-    ModifiedBy VARCHAR,
-    ModifiedAt TIMESTAMP,
-    DeleteFlag BOOLEAN
-);
-
-CREATE TABLE Tbl_Venue (
-    VenueId VARCHAR,
-    VenueCode VARCHAR,
-    VenueName VARCHAR,
-    VenueDescription VARCHAR,
-    VenueAddress VARCHAR,
-    VenueCapacity INT,
-    CreatedBy VARCHAR,
-    CreatedAt TIMESTAMP,
-    ModifiedBy VARCHAR,
-    ModifiedAt TIMESTAMP,
-    DeleteFlag BOOLEAN
-);
-
 CREATE TABLE Tbl_Transaction (
     TransactionId VARCHAR,
     TransactionCode VARCHAR,
@@ -170,6 +134,58 @@ CREATE TABLE Tbl_BusinessEmail (
     FullName VARCHAR,
     Phone VARCHAR,
     Email VARCHAR,
+    CreatedBy VARCHAR,
+    CreatedAt TIMESTAMP,
+    ModifiedBy VARCHAR,
+    ModifiedAt TIMESTAMP,
+    DeleteFlag BOOLEAN
+);
+
+CREATE TABLE Tbl_Venue (
+    VenueId VARCHAR,
+    VenueCode VARCHAR,
+    VenueName VARCHAR,
+    VenueDetailCode VARCHAR,
+    VenueTypeCode VARCHAR,
+    VenueDescription TEXT,
+    VenueAddress VARCHAR,
+    VenueCapacity INT,
+    VenueFacilities TEXT,
+    VenueAddons TEXT,
+    CreatedBy VARCHAR,
+    CreatedAt TIMESTAMP,
+    ModifiedBy VARCHAR,
+    ModifiedAt TIMESTAMP,
+    DeleteFlag BOOLEAN
+);
+
+CREATE TABLE Tbl_Event (
+    EventId VARCHAR,
+    EventCode VARCHAR,
+    EventName VARCHAR,
+    CategoryCode VARCHAR,
+    Description VARCHAR,
+    Address VARCHAR,
+    StartDate TIMESTAMP,
+    EndDate TIMESTAMP,
+    EventImage VARCHAR,
+    IsActive BOOLEAN,
+    EventStatus VARCHAR,
+    BusinessOwnerCode VARCHAR,
+    TotalTicketQuantity INT,
+    SoldoutCount INT,
+    CreatedBy VARCHAR,
+    CreatedAt TIMESTAMP,
+    ModifiedBy VARCHAR,
+    ModifiedAt TIMESTAMP,
+    DeleteFlag BOOLEAN
+);
+
+
+CREATE TABLE Tbl_VenueType (
+    VenueTypeId VARCHAR,
+    VenueTypeCode VARCHAR,
+    VenueTypeName VARCHAR,
     CreatedBy VARCHAR,
     CreatedAt TIMESTAMP,
     ModifiedBy VARCHAR,

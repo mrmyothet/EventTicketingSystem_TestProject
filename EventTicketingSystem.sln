@@ -9,8 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.App", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E7CCEFBB-ACEC-41F4-BEED-57F467B20302}"
 	ProjectSection(SolutionItems) = preProject
-		..\EventTicketingSystem.sql = ..\EventTicketingSystem.sql
-		..\README.md = ..\README.md
+		DropExistingTables.sql = DropExistingTables.sql
+		EventTicketingSystem.sql = EventTicketingSystem.sql
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Database", "EventTicketingSystem.Database\EventTicketingSystem.Database.csproj", "{2E5E03A1-FE0B-0627-20D1-A308BF05267E}"
