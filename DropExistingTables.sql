@@ -11,4 +11,5 @@ drop table tbl_tickettype;
 drop table tbl_transaction;
 drop table tbl_transactionticket;
 drop table tbl_venue;
+drop table tbl_venuetype;
 drop table tbl_verification;
