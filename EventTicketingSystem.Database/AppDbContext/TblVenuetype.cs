@@ -3,17 +3,13 @@ using System.Collections.Generic;
 
 namespace EventTicketingSystem.Database.AppDbContext;
 
-public partial class TblAdmin
+public partial class TblVenuetype
 {
-    public string? Userid { get; set; }
+    public string? Venuetypeid { get; set; }
 
-    public string? Usercode { get; set; }
+    public string? Venuetypecode { get; set; }
 
-    public string? Username { get; set; }
-
-    public string? Email { get; set; }
-
-    public string? Password { get; set; }
+    public string? Venuetypename { get; set; }
 
     public string? Createdby { get; set; }
 
