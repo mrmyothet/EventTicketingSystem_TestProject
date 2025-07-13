@@ -6,6 +6,7 @@ public class DA_BusinessEmail
     private readonly AppDbContext _db;
 
     private const string BusinessEmailCodePrefix = "BE";
+    private const string CreatedByUserId = "User"; 
 
     private string NextBusinessEmailCode()
     {
@@ -32,7 +33,7 @@ public class DA_BusinessEmail
                 Fullname = requestModel.FullName,
                 Phone = requestModel.Phone,
                 Email = requestModel.Email, 
-                Createdby = requestModel.CurrentUserId,
+                Createdby = CreatedByUserId,
                 Createdat = DateTime.Now,
                 Deleteflag = false
             };
