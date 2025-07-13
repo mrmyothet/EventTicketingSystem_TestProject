@@ -20,6 +20,9 @@ public class BusinessEmailController : ControllerBase
         {
             return BadRequest("Request model cannot be null.");
         }
+
+        requestModel.CurrentUserId = "User";
+
         var result = await _bl_BusinessEmail.Create(requestModel);
         if (result.IsSuccess)
         {

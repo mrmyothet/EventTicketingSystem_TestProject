@@ -31,7 +31,10 @@ public class DA_BusinessEmail
                 Businessemailcode = NextBusinessEmailCode(),
                 Fullname = requestModel.FullName,
                 Phone = requestModel.Phone,
-                Email = requestModel.Email
+                Email = requestModel.Email, 
+                Createdby = requestModel.CurrentUserId,
+                Createdat = DateTime.Now,
+                Deleteflag = false
             };
             var entry = await _db.TblBusinessemails.AddAsync(newBusinessEmail);
             await _db.SaveChangesAsync();
