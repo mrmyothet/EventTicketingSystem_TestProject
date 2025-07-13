@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E7CCEFBB-ACEC-41F4-BEED-57F467B20302}"
 	ProjectSection(SolutionItems) = preProject
 		DropExistingTables.sql = DropExistingTables.sql
+		CreateSampleData.sql = CreateSampleData.sql
 		EventTicketingSystem.sql = EventTicketingSystem.sql
 		README.md = README.md
 		SecretManager.md = SecretManager.md
