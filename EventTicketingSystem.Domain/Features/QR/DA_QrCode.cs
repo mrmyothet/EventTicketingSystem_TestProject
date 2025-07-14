@@ -1,9 +1,6 @@
-﻿using EventTicketingSystem.Domain.Models.Features.QR;
-using System.Drawing;
+﻿namespace EventTicketingSystem.Domain.Features.QR;
 
-namespace EventTicketingSystem.Domain.Features.QR;
-
-public  class DA_QrCode
+public class DA_QrCode
 {
     private readonly ILogger<DA_QrCode> _logger;
     private readonly AppDbContext _db;
@@ -34,16 +31,22 @@ public  class DA_QrCode
             return Result<QrGenerateResponseModel>.SystemError("Invalid data provided for QR code generation.");
         }
 
-        string qrString = $"{tblEvent.Eventcode}|{tblEvent.Eventname}|{tblTicketCode.Ticketcode}|{tblTicketType.Tickettypecode}|{tblTicketPriceCode.Ticketpricecode}|{requestModel.FullName}|{requestModel.Email}";
+        string qrString = $"{tblEvent.Eventname}" +
+            $"|{tblEvent.Eventcode}|" +
+            $"{DateOnly.FromDateTime((DateTime)tblEvent.Startdate)}|" +
+            $"|{tblEvent.Startdate}|" +
+            $"|{tblEvent.Enddate}|" +
+            $"{tblTicketCode.Ticketcode}|" +
+            //$"|{tblEvent.GateOpenTime}|" +
+            $"|{ticketCode}|" +
+            $"{tblTicketPriceCode.Ticketprice}|" +
+            $"{tblTicketType.Tickettypename}|" +
+            $"{requestModel.FullName}|" +
+            $"{requestModel.Email}|" +
+            //$"{tblEvent.VenueCode}|"; + 
+            $"{tblEvent.Address}";
+
         response.QrString = qrString;
-
-        //string qrCodeImagePath = await GenerateQrCodeImage(qrString);
-
-        //if (string.IsNullOrEmpty(qrCodeImagePath))
-        //{
-        //    _logger.LogError("Failed to generate QR code image.");
-        //    return Result<QrGenerateResponseModel>.SystemError("Failed to generate QR code image.");
-        //}
 
         return Result<QrGenerateResponseModel>.Success(response, "QR code generated successfully.");
 
