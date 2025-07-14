@@ -12,20 +12,36 @@ public class QrCodeController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody]QrGenerateRequestModel requestModel)
+    public async Task<IActionResult> Generate([FromBody] QrGenerateRequestModel requestModel)
     {
         if (requestModel == null)
         {
             return BadRequest("Request model cannot be null.");
         }
 
-        var result = await _bl_QrCode.Create(requestModel);
+        var result = await _bl_QrCode.Generate(requestModel);
 
         if (result.IsError)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, result.Message);
         }
 
+        return Ok(result.Data);
+    }
+
+    [HttpGet("{qrString}")]
+    public async Task<IActionResult> Check(string qrString)
+    {
+        if (string.IsNullOrEmpty(qrString))
+        {
+            return BadRequest("Request model cannot be null.");
+        }
+
+        var result = await _bl_QrCode.Check(qrString);
+        if (result.IsError)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, result.Message);
+        }
         return Ok(result.Data);
     }
 }

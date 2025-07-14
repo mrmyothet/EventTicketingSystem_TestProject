@@ -21,7 +21,7 @@ public class BL_QrCode
         _da_QrCode = da_QrCode;
     }
 
-    public async Task<Result<QrGenerateResponseModel>> Create(QrGenerateRequestModel requestModel)
+    public async Task<Result<QrGenerateResponseModel>> Generate(QrGenerateRequestModel requestModel)
     {
         var response = await _da_QrCode.GenerateQr(requestModel);
 
@@ -39,6 +39,18 @@ public class BL_QrCode
         SaveQrImage(response.Data.QrString, outputFileName);
 
         return response;
+    }
+
+    public async Task<Result<QrCheckResponseModel>> Check(string qrString)
+    {
+        var response = await _da_QrCode.CheckQr(qrString);
+        if (response.IsError)
+        {
+            return Result<QrCheckResponseModel>.SystemError(response.Message);
+        }
+        response.Message = "QR code is valid.";
+        return response;
+
     }
 
     private void SaveQrImage(string qrString, string outputFileName)
@@ -90,4 +102,6 @@ public class BL_QrCode
             pixelData.Height
         );
     }
+
+
 }
