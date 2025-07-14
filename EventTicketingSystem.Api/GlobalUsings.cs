@@ -5,3 +5,6 @@ global using Microsoft.AspNetCore.Mvc;
 global using EventTicketingSystem.Database.AppDbContext;
 global using Microsoft.EntityFrameworkCore;
 global using EventTicketingSystem.Domain.Features.BusinessEmail;
+global using EventTicketingSystem.Domain.Models.Features.BusinessEmail;
+global using EventTicketingSystem.Domain.Features.QR;
+global using EventTicketingSystem.Domain.Models.Features.QR;

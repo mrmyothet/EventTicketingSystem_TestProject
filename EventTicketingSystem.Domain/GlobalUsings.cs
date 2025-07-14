@@ -6,3 +6,4 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.Configuration;
 global using EventTicketingSystem.Domain.Models.Features.BusinessEmail;
 global using EventTicketingSystem.Domain.Features.BusinessEmail;
+global using EventTicketingSystem.Domain.Models.Features.QR;

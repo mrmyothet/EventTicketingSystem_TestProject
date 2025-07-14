@@ -28,6 +28,7 @@ public static class FeaturesManager
     {
         services.AddScoped<BL_EventCategory>();
         services.AddScoped<BL_BusinessEmail>();
+        services.AddScoped<BL_QrCode>();
 
         return services;
     }
@@ -36,6 +37,7 @@ public static class FeaturesManager
     {
         services.AddScoped<DA_EventCategory>();
         services.AddScoped<DA_BusinessEmail>();
+        services.AddScoped<DA_QrCode>();
 
         return services;
     }

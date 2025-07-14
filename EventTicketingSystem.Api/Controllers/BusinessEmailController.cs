@@ -1,7 +1,4 @@
-﻿using EventTicketingSystem.Domain.Features.BusinessEmail;
-using EventTicketingSystem.Domain.Models.Features.BusinessEmail;
-
-namespace EventTicketingSystem.Api.Controllers;
+﻿namespace EventTicketingSystem.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

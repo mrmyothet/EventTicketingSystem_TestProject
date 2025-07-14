@@ -1,6 +1,4 @@
-﻿using EventTicketingSystem.Domain.Models.Features.QR;
-
-namespace EventTicketingSystem.Domain.Features.QR;
+﻿namespace EventTicketingSystem.Domain.Features.QR;
 
 public class BL_QrCode
 {
