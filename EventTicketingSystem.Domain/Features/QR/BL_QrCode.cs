@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualBasic;
-using System.Drawing;
-using System.Drawing.Imaging;
+﻿using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.PixelFormats;
 using ZXing;
 using ZXing.Common;
-using ZXing.Windows.Compatibility;
+using ZXing.Rendering;
 
 namespace EventTicketingSystem.Domain.Features.QR;
 
@@ -12,7 +12,8 @@ public class BL_QrCode
     private readonly DA_QrCode _da_QrCode;
 
     private const BarcodeFormat DEFAULT_BARCODE_FORMAT = BarcodeFormat.QR_CODE;
-    private static readonly ImageFormat DEFAULT_IMAGE_FORMAT = ImageFormat.Png;
+    private const int WIDTH = 300;
+    private const int HEIGHT = 300;
 
     public BL_QrCode(DA_QrCode da_QrCode)
     {
@@ -32,23 +33,46 @@ public class BL_QrCode
 
         string outputFileName = requestModel.TicketCode + "_" + requestModel.Email + ".png";
 
-        // Generate the QR code image using ZXing
-        var writer = new BarcodeWriter<Bitmap>
+        var writer = new BarcodeWriterPixelData
         {
-            Format = DEFAULT_BARCODE_FORMAT,
+            Format = BarcodeFormat.QR_CODE,
             Options = new EncodingOptions
             {
-                Width = 300,
-                Height = 300
-            }, 
-            Renderer = new BitmapRenderer()
+                Height = WIDTH,
+                Width = HEIGHT,
+                Margin = 1
+            }
         };
 
+        var pixelData = writer.Write(response.Data.QrString);
+        var image = ConvertToImageSharp(pixelData);
 
-        var bitmap = writer.Write(response.Data.QrString);
-
-        bitmap.Save(outputFileName, DEFAULT_IMAGE_FORMAT);
+        
+        //using var ms = new MemoryStream();
+        image.Save(outputFileName, new PngEncoder());
 
         return response;
+    }
+
+    private Image<Rgba32> ConvertToImageSharp(PixelData pixelData)
+    {
+        var rgbaPixels = new Rgba32[pixelData.Width * pixelData.Height];
+
+        for (int i = 0; i < rgbaPixels.Length; i++)
+        {
+            int offset = i * 4;
+            byte b = pixelData.Pixels[offset + 0];
+            byte g = pixelData.Pixels[offset + 1];
+            byte r = pixelData.Pixels[offset + 2];
+            byte a = pixelData.Pixels[offset + 3];
+
+            rgbaPixels[i] = new Rgba32(r, g, b, a);
+        }
+
+        return Image.LoadPixelData<Rgba32>(
+            new ReadOnlySpan<Rgba32>(rgbaPixels),
+            pixelData.Width,
+            pixelData.Height
+        );
     }
 }
