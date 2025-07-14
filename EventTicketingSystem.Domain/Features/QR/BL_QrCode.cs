@@ -1,4 +1,5 @@
 ﻿using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.PixelFormats;
 using ZXing;
@@ -31,7 +32,8 @@ public class BL_QrCode
 
         response.Message = "QR code generated successfully.";
 
-        string outputFileName = requestModel.TicketCode + "_" + requestModel.Email + ".png";
+        string outputFileName = "qr_files/" + requestModel.TicketCode + "_" + requestModel.Email + ".png";
+        outputFileName = Path.Combine("qr_files", outputFileName);
         SaveQrImage(response.Data.QrString, outputFileName);
 
         return response;
@@ -53,7 +55,10 @@ public class BL_QrCode
         var pixelData = writer.Write(qrString);
         var image = ConvertToImageSharp(pixelData);
 
-        image.Save(outputFileName, new PngEncoder());
+        image.Save(outputFileName, new JpegEncoder
+        {
+            Quality = 90 
+        });
     }
 
     private Image<Rgba32> ConvertToImageSharp(PixelData pixelData)
