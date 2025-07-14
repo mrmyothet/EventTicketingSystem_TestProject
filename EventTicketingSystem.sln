@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.MVCWebApp", "EventTicketingSystem.MVCWebApp\EventTicketingSystem.MVCWebApp.csproj", "{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.RazorPages", "EventTicketingSystem.RazorPages\EventTicketingSystem.RazorPages.csproj", "{4A412DA1-9B7A-425F-9D25-DC47D6C21333}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A412DA1-9B7A-425F-9D25-DC47D6C21333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A412DA1-9B7A-425F-9D25-DC47D6C21333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A412DA1-9B7A-425F-9D25-DC47D6C21333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A412DA1-9B7A-425F-9D25-DC47D6C21333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
