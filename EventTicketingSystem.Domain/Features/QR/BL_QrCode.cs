@@ -1,6 +1,5 @@
 ﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.PixelFormats;
 using ZXing;
 using ZXing.Common;
@@ -13,6 +12,7 @@ public class BL_QrCode
     private readonly DA_QrCode _da_QrCode;
 
     private const BarcodeFormat DEFAULT_BARCODE_FORMAT = BarcodeFormat.QR_CODE;
+    private const string QR_DIR_NAME = "QR_Files";
     private const int WIDTH = 300;
     private const int HEIGHT = 300;
 
@@ -32,8 +32,10 @@ public class BL_QrCode
 
         response.Message = "QR code generated successfully.";
 
-        string outputFileName = "qr_files/" + requestModel.TicketCode + "_" + requestModel.Email + ".png";
-        outputFileName = Path.Combine("qr_files", outputFileName);
+
+        string fileName = requestModel.TicketCode + "_" + requestModel.Email + ".png";
+        string outputFileName = Path.Combine(QR_DIR_NAME, fileName);
+
         SaveQrImage(response.Data.QrString, outputFileName);
 
         return response;
@@ -55,9 +57,15 @@ public class BL_QrCode
         var pixelData = writer.Write(qrString);
         var image = ConvertToImageSharp(pixelData);
 
+        var directory = Path.GetDirectoryName(outputFileName);
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory!);
+        }
+
         image.Save(outputFileName, new JpegEncoder
         {
-            Quality = 90 
+            Quality = 90
         });
     }
 
