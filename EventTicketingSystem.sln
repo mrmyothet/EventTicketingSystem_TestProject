@@ -9,8 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.App", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{E7CCEFBB-ACEC-41F4-BEED-57F467B20302}"
 	ProjectSection(SolutionItems) = preProject
-		DropExistingTables.sql = DropExistingTables.sql
 		CreateSampleData.sql = CreateSampleData.sql
+		DropExistingTables.sql = DropExistingTables.sql
 		EventTicketingSystem.sql = EventTicketingSystem.sql
 		README.md = README.md
 		SecretManager.md = SecretManager.md
@@ -21,6 +21,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Shared", "EventTicketingSystem.Shared\EventTicketingSystem.Shared.csproj", "{A1462107-D4A3-EA38-2ED9-D16877BCA4CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.Domain", "EventTicketingSystem.Domain\EventTicketingSystem.Domain.csproj", "{06607EA3-3EC1-942E-3985-52F3ABF21138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventTicketingSystem.MVCWebApp", "EventTicketingSystem.MVCWebApp\EventTicketingSystem.MVCWebApp.csproj", "{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{06607EA3-3EC1-942E-3985-52F3ABF21138}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06607EA3-3EC1-942E-3985-52F3ABF21138}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06607EA3-3EC1-942E-3985-52F3ABF21138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF927CE-3EF3-4D33-B5C0-D1E9413C5D28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
