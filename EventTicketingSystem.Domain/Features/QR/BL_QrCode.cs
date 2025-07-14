@@ -32,7 +32,13 @@ public class BL_QrCode
         response.Message = "QR code generated successfully.";
 
         string outputFileName = requestModel.TicketCode + "_" + requestModel.Email + ".png";
+        SaveQrImage(response.Data.QrString, outputFileName);
 
+        return response;
+    }
+
+    private void SaveQrImage(string qrString, string outputFileName)
+    {
         var writer = new BarcodeWriterPixelData
         {
             Format = BarcodeFormat.QR_CODE,
@@ -44,14 +50,10 @@ public class BL_QrCode
             }
         };
 
-        var pixelData = writer.Write(response.Data.QrString);
+        var pixelData = writer.Write(qrString);
         var image = ConvertToImageSharp(pixelData);
 
-        
-        //using var ms = new MemoryStream();
         image.Save(outputFileName, new PngEncoder());
-
-        return response;
     }
 
     private Image<Rgba32> ConvertToImageSharp(PixelData pixelData)
